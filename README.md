@@ -111,7 +111,11 @@ It will give you a response
 
 <img width="1321" alt="image" src="https://github.com/user-attachments/assets/0b28de45-32df-4d37-8a66-d633987923ae" />
 
-
+# Running multiple instances
+change the line#7 
+https://github.com/ignitewala/llm-local-k8s/blob/main/deployment.yml#L7 
+add how many replicas you need.
+But you have to individually exec into each pod and pull llama2 
 
 
 

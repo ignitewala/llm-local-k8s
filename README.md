@@ -20,12 +20,12 @@ If your namespace is not 'llm' then change the namesapce in the deployment accor
 ```
 kubectl apply -f deployment.yml
 ```
-It will deploy the ollama pod
+It will deploy the ollama pod, run the following command to check the pod creation as it will take a while to pull the ollama layers 
 
-run the following command to check the pod creation as it will take a while to pull the ollama layers 
 ```
 kubectl get pod -n llm
 ```
+
 Wait till the pod status becomes running
 
 <img width="626" alt="image" src="https://github.com/user-attachments/assets/4d9ade9c-08cb-49de-8084-73ae31ddc7da" />
@@ -41,6 +41,7 @@ kubectl apply -f service.yml
 <img width="717" alt="image" src="https://github.com/user-attachments/assets/41e04925-3d3e-406e-a955-29cfb74bc6be" />
 
 run the following command to verify your service, llm is my namespace
+
 ```
 kubectl get svc -n llm
 ```
@@ -61,6 +62,7 @@ curl -s http://127.0.0.1:30000/api/generate -d '{
 }' | jq -r '.response' | tr -d '\n'
 
 ```
+
 It will return 'null' as ollama doesnt pull any model untill we pull it manually
 <img width="814" alt="image" src="https://github.com/user-attachments/assets/1aa8cae4-2aba-44d2-b822-84ec12880b29" />
 
@@ -83,16 +85,20 @@ pull the llama2 latest model
 ollama pull llama2
 ```
 it will take a while to download 3.2 GB
+
 <img width="630" alt="image" src="https://github.com/user-attachments/assets/b5cd8fac-dfa9-4c18-abec-fbb058f05abd" />
 
 now exit from the container's bash
+
 ```
 exit
-``
+```
+
 <img width="425" alt="image" src="https://github.com/user-attachments/assets/388ab034-c275-419f-b6d5-8c435a7b1fa2" />
 
 ### again send the water-jug query
 execute the following curl command
+
 ```
 curl -s http://127.0.0.1:30000/api/generate -d '{
 "model": "llama2",
@@ -100,8 +106,11 @@ curl -s http://127.0.0.1:30000/api/generate -d '{
 }' | jq -r '.response' | tr -d '\n'
 
 ```
+
 It will give you a response 
-<img width="820" alt="image" src="https://github.com/user-attachments/assets/4c8a0c9b-462e-4d2b-9856-cdb01be657ab" />
+
+<img width="1322" alt="image" src="https://github.com/user-attachments/assets/9dd1f6ea-2bd4-4242-b091-4653c9a93a37" />
+
 
 
 

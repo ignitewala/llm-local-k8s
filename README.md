@@ -2,7 +2,7 @@
 Configuring LLM K8s
 
 ## Pre-req
-Docker-hub/Rancher-desktop configured with k8s
+Docker/Rancher-desktop configured with k8s
 Run the following command to verify 
 ```
  kubectl get pod

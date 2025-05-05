@@ -109,7 +109,8 @@ curl -s http://127.0.0.1:30000/api/generate -d '{
 
 It will give you a response 
 
-<img width="1322" alt="image" src="https://github.com/user-attachments/assets/9dd1f6ea-2bd4-4242-b091-4653c9a93a37" />
+<img width="1321" alt="image" src="https://github.com/user-attachments/assets/0b28de45-32df-4d37-8a66-d633987923ae" />
+
 
 
 
